@@ -1158,49 +1158,49 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 
 **Screenshot:**
 
-```text
+
 ![Task 1 Screenshot](screenshots/task-1/screenshot01.png)
-```
+
 
 ## Task 2 — Server-Side Validation
 
 **Screenshot:**
 
-```text
+
 ![Task 2 Screenshot](screenshots/task-2/screenshot02.png)
-```
+
 
 ## Task 3 — Responsive Design
 
 **Screenshot:**
 
-```text
+
 ![Task 3 Screenshot](screenshots/task-3/screenshot03.png)
-```
+
 
 ## Task 4 — DOM Validation
 
 **Screenshot:**
 
-```text
+
 ![Task 4 Screenshot](screenshots/task-4/screenshot04.png)
-```
+
 
 ## Task 5 — API Integration
 
 **Screenshot:**
 
-```text
+
 ![Task 5 Screenshot](screenshots/task-5/screenshot05.png)
-```
+
 
 ## Task 6 — Registration and Login
 
 **Screenshot:**
 
-```text
+
 [Add Task 6 Registration/Login Screenshot Here]
-```
+
 
 # Video Demonstrations
 
