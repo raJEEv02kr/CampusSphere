@@ -1159,7 +1159,7 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 **Screenshot:**
 
 ```text
-[Add Task 1 Screenshot Here]
+![Task 1 Screenshot](screenshots/task-1/screenshot01.png)
 ```
 
 ## Task 2 — Server-Side Validation
@@ -1167,7 +1167,7 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 **Screenshot:**
 
 ```text
-[Add Task 2 Screenshot Here]
+![Task 2 Screenshot](screenshots/task-2/screenshot02.png)
 ```
 
 ## Task 3 — Responsive Design
@@ -1175,7 +1175,7 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 **Screenshot:**
 
 ```text
-[Add Task 3 Screenshot Here]
+![Task 3 Screenshot](screenshots/task-3/screenshot03.png)
 ```
 
 ## Task 4 — DOM Validation
@@ -1183,7 +1183,7 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 **Screenshot:**
 
 ```text
-[Add Task 4 Screenshot Here]
+![Task 4 Screenshot](screenshots/task-4/screenshot04.png)
 ```
 
 ## Task 5 — API Integration
@@ -1191,7 +1191,7 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 **Screenshot:**
 
 ```text
-[Add Task 5 Screenshot Here]
+![Task 5 Screenshot](screenshots/task-5/screenshot05.png)
 ```
 
 ## Task 6 — Registration and Login
@@ -1201,34 +1201,6 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 ```text
 [Add Task 6 Registration/Login Screenshot Here]
 ```
-
-## Task 6 — MongoDB Atlas Data
-
-**Screenshot:**
-
-```text
-[Add Task 6 MongoDB Atlas Screenshot Here]
-```
-
-> Ensure that screenshots do not expose passwords, database connection strings, JWT secrets, or other sensitive information.
-
-## Task 6 — Protected Dashboard
-
-**Screenshot:**
-
-```text
-[Add Task 6 Dashboard Screenshot Here]
-```
-
-## Task 6 — Logout
-
-**Screenshot:**
-
-```text
-[Add Task 6 Logout Verification Screenshot Here]
-```
-
----
 
 # Video Demonstrations
 
