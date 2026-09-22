@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSphere | Registration Complete</title>
+
+    <!-- Prevent theme flash -->
+    <script>
+        (() => {
+            const storedTheme =
+                localStorage.getItem("campusSphereTheme");
+
+            const prefersDark =
+                window.matchMedia(
+                    "(prefers-color-scheme: dark)"
+                ).matches;
+
+            const initialTheme =
+                storedTheme === "dark" ||
+                    (storedTheme === "system" && prefersDark)
+                    ? "dark"
+                    : "light";
+
+            document.documentElement.setAttribute(
+                "data-theme",
+                initialTheme
+            );
+        })();
+    </script>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="/#features">
+                Features
+            </a>
+
+            <a href="/">
+                Registration
+            </a>
+
+            <a href="/#about">
+                About
+            </a>
+
+        </nav>
+
+
+        <!-- Theme Selector -->
+        <div class="theme-selector">
+
+            <button type="button" class="theme-button" id="themeButton">
+
+                <span id="themeIcon">◌</span>
+
+                <span>Theme</span>
+
+            </button>
+
+
+            <div class="theme-menu" id="themeMenu">
+
+                <button type="button" class="theme-option" data-theme="light">
+                    <span>☀</span>
+                    Light
+                </button>
+
+                <button type="button" class="theme-option" data-theme="dark">
+                    <span>◐</span>
+                    Dark
+                </button>
+
+                <button type="button" class="theme-option" data-theme="system">
+                    <span>◌</span>
+                    System
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- Main -->
+    <main class="success-page">
+
+        <section class="success-container">
+
+            <!-- Confirmation Header -->
+            <div class="success-header">
+
+                <p class="eyebrow">
+                    REGISTRATION COMPLETE
+                </p>
+
+                <h1>
+                    Welcome, <%= student.fullName %>.
+                </h1>
+
+                <p class="success-message">
+                    Your student profile has been successfully
+                    submitted to CampusSphere.
+                </p>
+
+            </div>
+
+
+            <!-- Student Information -->
+            <div class="details-section">
+
+                <div class="details-heading">
+
+                    <div>
+                        <p class="details-label">
+                            STUDENT PROFILE
+                        </p>
+
+                        <h2>
+                            Registration details
+                        </h2>
+                    </div>
+
+                    <span class="status-badge">
+                        Submitted
+                    </span>
+
+                </div>
+
+
+                <div class="details-grid">
+
+                    <div class="detail-item">
+
+                        <span class="detail-name">
+                            Email Address
+                        </span>
+
+                        <span class="detail-value">
+                            <%= student.email %>
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-name">
+                            Phone Number
+                        </span>
+
+                        <span class="detail-value">
+                            <%= student.phone %>
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-name">
+                            Department
+                        </span>
+
+                        <span class="detail-value">
+                            <%= student.department %>
+                        </span>
+
+                    </div>
+
+
+                    <div class="detail-item">
+
+                        <span class="detail-name">
+                            Academic Year
+                        </span>
+
+                        <span class="detail-value">
+                            <%= student.year %>
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Actions -->
+            <div class="success-actions">
+
+                <a href="/" class="primary-action">
+                    Register Another Student
+                </a>
+
+                <a href="/" class="secondary-action">
+                    Return to Home
+                </a>
+
+            </div>
+
+
+            <p class="confirmation-note">
+                Your information was processed successfully by the
+                CampusSphere server.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer" id="about">
+
+        <div class="footer-inner">
+
+            <div class="footer-main">
+
+                <!-- Brand -->
+                <div class="footer-brand">
+
+                    <a href="/" class="footer-logo">
+                        CampusSphere
+                    </a>
+
+                    <p class="footer-description">
+                        A connected space for campus life,
+                        opportunities, and student activities.
+                    </p>
+
+                </div>
+
+
+                <!-- Platform -->
+                <div class="footer-column">
+
+                    <h3>
+                        Platform
+                    </h3>
+
+                    <a href="/#features">
+                        Features
+                    </a>
+
+                    <a href="/">
+                        Registration
+                    </a>
+
+                    <a href="/#about">
+                        About
+                    </a>
+
+                </div>
+
+
+                <!-- Support -->
+                <div class="footer-column">
+
+                    <h3>
+                        Support
+                    </h3>
+
+                    <a href="mailto:support@campussphere.local">
+                        Contact
+                    </a>
+
+                    <a href="#">
+                        Privacy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-divider"></div>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 CampusSphere. All rights reserved.
+                </p>
+
+                <p>
+                    Full Stack Development Project
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- Theme JavaScript -->
+    <script src="/js/theme.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="CampusSphere responsive campus management platform">
+
+    <title>CampusSphere | Responsive Design</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         Navigation
+         ========================================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#overview">
+                Overview
+            </a>
+
+            <a href="#features">
+                Features
+            </a>
+
+            <a href="#activity">
+                Activity
+            </a>
+
+        </nav>
+
+
+        <button type="button" class="menu-button" id="menuButton" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+
+        <div class="desktop-status">
+            Responsive Interface
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         Mobile Navigation
+         ========================================= -->
+
+    <div class="mobile-menu" id="mobileMenu">
+
+        <a href="#overview">
+            Overview
+        </a>
+
+        <a href="#features">
+            Features
+        </a>
+
+        <a href="#activity">
+            Activity
+        </a>
+
+    </div>
+
+
+    <!-- =========================================
+         Main Content
+         ========================================= -->
+
+    <main>
+
+
+        <!-- =====================================
+             Hero Section
+             ===================================== -->
+
+        <section class="hero" id="overview">
+
+            <div class="hero-content">
+
+                <span class="eyebrow">
+                    LEVEL 2 · TASK 3
+                </span>
+
+                <h1>
+                    Your campus,
+                    <span>beautifully responsive.</span>
+                </h1>
+
+                <p>
+                    A responsive CampusSphere interface designed
+                    to provide a consistent student experience
+                    across desktops, tablets and mobile devices.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a href="#features" class="primary-button">
+                        Explore Platform
+                        <span>→</span>
+                    </a>
+
+                    <a href="#activity" class="secondary-button">
+                        View Activity
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================
+                 Dashboard Preview
+                 ================================= -->
+
+            <div class="dashboard-preview">
+
+                <div class="window-bar">
+
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+
+                    <span class="window-title">
+                        Campus Overview
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-content">
+
+                    <div class="dashboard-top">
+
+                        <div>
+
+                            <span class="small-label">
+                                STUDENT DASHBOARD
+                            </span>
+
+                            <h2>
+                                Good morning, Rajeev.
+                            </h2>
+
+                        </div>
+
+                        <span class="live-status">
+                            <span></span>
+                            Live
+                        </span>
+
+                    </div>
+
+
+                    <!-- Dashboard Stats -->
+
+                    <div class="stats-grid">
+
+                        <div class="stat-card">
+
+                            <span>
+                                Events
+                            </span>
+
+                            <strong>
+                                08
+                            </strong>
+
+                            <small>
+                                This month
+                            </small>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span>
+                                Opportunities
+                            </span>
+
+                            <strong>
+                                14
+                            </strong>
+
+                            <small>
+                                Available
+                            </small>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span>
+                                Activities
+                            </span>
+
+                            <strong>
+                                24
+                            </strong>
+
+                            <small>
+                                Completed
+                            </small>
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- Activity Graph -->
+
+                    <div class="activity-card" id="activity">
+
+                        <div class="activity-header">
+
+                            <div>
+
+                                <span class="small-label">
+                                    ACTIVITY
+                                </span>
+
+                                <h3>
+                                    Weekly engagement
+                                </h3>
+
+                            </div>
+
+                            <span class="activity-value">
+                                +18.4%
+                            </span>
+
+                        </div>
+
+
+                        <div class="graph">
+
+                            <svg viewBox="0 0 700 180" preserveAspectRatio="none" aria-label="Weekly engagement graph">
+
+                                <defs>
+
+                                    <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+
+                                        <stop offset="0%" stop-opacity="0.18" />
+
+                                        <stop offset="100%" stop-opacity="0" />
+
+                                    </linearGradient>
+
+                                </defs>
+
+
+                                <path class="graph-area" d="M0,145
+                                       C55,132 65,115 110,122
+                                       C155,129 165,96 215,103
+                                       C260,110 280,75 325,83
+                                       C375,91 385,98 430,72
+                                       C475,46 495,66 540,54
+                                       C585,42 615,28 700,18
+                                       L700,180
+                                       L0,180 Z" />
+
+                                <path class="graph-line" d="M0,145
+                                       C55,132 65,115 110,122
+                                       C155,129 165,96 215,103
+                                       C260,110 280,75 325,83
+                                       C375,91 385,98 430,72
+                                       C475,46 495,66 540,54
+                                       C585,42 615,28 700,18" />
+
+                            </svg>
+
+                        </div>
+
+
+                        <div class="graph-labels">
+
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                            <span>Sun</span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             Responsive Introduction
+             ===================================== -->
+
+        <section class="responsive-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    RESPONSIVE BY DESIGN
+                </span>
+
+                <h2>
+                    One interface.
+                    Every screen.
+                </h2>
+
+                <p>
+                    CampusSphere adapts its layout, navigation,
+                    cards and content hierarchy according to
+                    the available screen space.
+                </p>
+
+            </div>
+
+
+            <div class="device-showcase">
+
+                <!-- Desktop -->
+
+                <button type="button" class="device-card desktop-device active" data-preview="desktop">
+
+                    <div class="device-preview">
+
+                        <div class="device-navbar"></div>
+
+                        <div class="device-columns">
+
+                            <div></div>
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <div class="device-content"></div>
+
+                    </div>
+
+                    <div class="device-info">
+
+                        <span>
+                            01
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Desktop
+                            </h3>
+
+                            <p>
+                                Multi-column layouts with expanded
+                                navigation and content.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Tablet -->
+
+                <button type="button" class="device-card tablet-device" data-preview="tablet">
+
+                    <div class="device-preview">
+
+                        <div class="device-navbar"></div>
+
+                        <div class="device-columns">
+
+                            <div></div>
+                            <div></div>
+
+                        </div>
+
+                        <div class="device-content"></div>
+
+                    </div>
+
+                    <div class="device-info">
+
+                        <span>
+                            02
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Tablet
+                            </h3>
+
+                            <p>
+                                Flexible two-column layouts with
+                                optimized spacing.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Mobile -->
+
+                <button type="button" class="device-card mobile-device" data-preview="mobile">
+
+                    <div class="device-preview">
+
+                        <div class="device-navbar"></div>
+
+                        <div class="device-columns">
+
+                            <div></div>
+
+                        </div>
+
+                        <div class="device-content"></div>
+
+                    </div>
+
+                    <div class="device-info">
+
+                        <span>
+                            03
+                        </span>
+
+                        <div>
+
+                            <h3>
+                                Mobile
+                            </h3>
+
+                            <p>
+                                Stacked content and compact navigation
+                                for smaller screens.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             Features
+             ===================================== -->
+
+        <section class="features-section" id="features">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    PLATFORM FEATURES
+                </span>
+
+                <h2>
+                    Built for everyday campus life.
+                </h2>
+
+            </div>
+
+
+            <div class="feature-grid">
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        01
+                    </span>
+
+                    <div class="feature-icon">
+                        ◫
+                    </div>
+
+                    <h3>
+                        Student Profiles
+                    </h3>
+
+                    <p>
+                        Keep academic and personal information
+                        organized in one accessible profile.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        02
+                    </span>
+
+                    <div class="feature-icon">
+                        ◷
+                    </div>
+
+                    <h3>
+                        Events
+                    </h3>
+
+                    <p>
+                        Discover campus events, activities
+                        and upcoming student programs.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        03
+                    </span>
+
+                    <div class="feature-icon">
+                        ↗
+                    </div>
+
+                    <h3>
+                        Opportunities
+                    </h3>
+
+                    <p>
+                        Find internships, competitions and
+                        opportunities relevant to students.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        04
+                    </span>
+
+                    <div class="feature-icon">
+                        ✓
+                    </div>
+
+                    <h3>
+                        Productivity
+                    </h3>
+
+                    <p>
+                        Manage everyday academic activities
+                        through a simple workspace.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        05
+                    </span>
+
+                    <div class="feature-icon">
+                        ≡
+                    </div>
+
+                    <h3>
+                        Campus Updates
+                    </h3>
+
+                    <p>
+                        Keep important announcements and
+                        updates within reach.
+                    </p>
+
+                </article>
+
+
+                <article class="feature-card">
+
+                    <span class="feature-number">
+                        06
+                    </span>
+
+                    <div class="feature-icon">
+                        ⌘
+                    </div>
+
+                    <h3>
+                        Connected Platform
+                    </h3>
+
+                    <p>
+                        Bring multiple student experiences
+                        together through one interface.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             Responsive Benefits
+             ===================================== -->
+
+        <section class="benefits-section">
+
+            <div class="benefits-content">
+
+                <span class="eyebrow">
+                    ADAPTIVE EXPERIENCE
+                </span>
+
+                <h2>
+                    Designed to stay useful
+                    at every breakpoint.
+                </h2>
+
+                <p>
+                    Layout changes are handled through CSS
+                    media queries, flexible grids and scalable
+                    typography instead of fixed dimensions.
+                </p>
+
+            </div>
+
+
+            <div class="breakpoint-list">
+
+                <div class="breakpoint-item">
+
+                    <span>
+                        ≥ 1024px
+                    </span>
+
+                    <strong>
+                        Desktop Layout
+                    </strong>
+
+                </div>
+
+
+                <div class="breakpoint-item">
+
+                    <span>
+                        601–1023px
+                    </span>
+
+                    <strong>
+                        Tablet Layout
+                    </strong>
+
+                </div>
+
+
+                <div class="breakpoint-item">
+
+                    <span>
+                        ≤ 600px
+                    </span>
+
+                    <strong>
+                        Mobile Layout
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <strong>
+                CampusSphere
+            </strong>
+
+            <p>
+                Responsive campus management interface.
+            </p>
+
+        </div>
+
+
+        <span>
+            Level 2 · Task 3
+        </span>
+
+    </footer>
+
+
+    <script src="/js/theme.js"></script>
+
+</body>
+
+</html>

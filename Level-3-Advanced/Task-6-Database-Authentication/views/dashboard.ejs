@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | CampusSphere</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #eef2ff, #f8fafc);
+            color: #1e293b;
+            padding: 30px;
+        }
+
+        .dashboard-container {
+            max-width: 850px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 35px rgba(15, 23, 42, 0.1);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 8px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: #0f172a;
+        }
+
+        .welcome-text {
+            color: #64748b;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .user-details {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .detail-card {
+            padding: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+        }
+
+        .detail-card h3 {
+            font-size: 13px;
+            color: #64748b;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .detail-card p {
+            font-size: 16px;
+            font-weight: bold;
+            overflow-wrap: anywhere;
+        }
+
+        .success-message {
+            margin-top: 30px;
+            padding: 16px;
+            background: #eff6ff;
+            border: 1px solid #bfdbfe;
+            color: #1d4ed8;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 15px;
+            }
+
+            .dashboard-container {
+                padding: 25px;
+                margin: 20px auto;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .user-details {
+                grid-template-columns: 1fr;
+            }
+        }
+        /* =========================================
+        LOGOUT BUTTON
+        ========================================= */
+
+        .dashboard-actions {
+            max-width: 850px;
+            margin: 30px auto 40px;
+            display: flex;
+            justify-content: center;
+            padding-top: 24px;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .logout-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 13px 30px;
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+            color: #ffffff !important;
+            text-decoration: none !important;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 600;
+            letter-spacing: 0.2px;
+            box-shadow: 0 5px 12px rgba(220, 38, 38, 0.20);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .logout-btn span {
+            font-size: 19px;
+        }
+
+        .logout-btn:hover {
+            background: linear-gradient(135deg, #dc2626, #b91c1c);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(220, 38, 38, 0.30);
+        }
+
+        .logout-btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <main class="dashboard-container">
+        <span class="badge">Login Successful</span>
+
+        <h1>Welcome to CampusSphere, <%= user.fullName %>!</h1>
+
+        <p class="welcome-text">
+            You have successfully logged in to your CampusSphere account.
+            Your student profile details are displayed below.
+        </p>
+
+        <section class="user-details">
+            <div class="detail-card">
+                <h3>Full Name</h3>
+                <p><%= user.fullName %></p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Email Address</h3>
+                <p><%= user.email %></p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Phone Number</h3>
+                <p><%= user.phone %></p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Department</h3>
+                <p><%= user.department %></p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Academic Year</h3>
+                <p><%= user.academicYear %></p>
+            </div>
+
+            <div class="detail-card">
+                <h3>Account Status</h3>
+                <p>Active</p>
+            </div>
+        </section>
+
+        <div class="success-message">
+            Your authentication was completed successfully using MongoDB,
+            bcryptjs, and JWT.
+        </div>
+    </main>
+
+    <div class="dashboard-actions">
+        <a href="/logout" class="logout-btn">
+            <span>↪</span>
+            Logout
+        </a>
+    </div>
+
+</body>
+</html>

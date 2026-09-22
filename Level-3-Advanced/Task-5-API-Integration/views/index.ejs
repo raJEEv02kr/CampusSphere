@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="CampusSphere API Integration Dashboard">
+
+    <title>CampusSphere | Campus Events</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         Navigation
+         ========================================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="#overview">
+                Overview
+            </a>
+
+            <a href="#events">
+                Events
+            </a>
+
+            <a href="#integration">
+                API Integration
+            </a>
+
+        </nav>
+
+
+        <span class="api-status">
+
+            <span class="status-dot"></span>
+
+            API Connected
+
+        </span>
+
+    </header>
+
+
+    <!-- =========================================
+         Main
+         ========================================= -->
+
+    <main class="page-container">
+
+
+        <!-- =====================================
+             Hero
+             ===================================== -->
+
+        <section class="hero" id="overview">
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    LEVEL 3 · TASK 5
+                </span>
+
+                <h1>
+                    Your campus,<br>
+                    connected.
+                </h1>
+
+                <p>
+                    CampusSphere retrieves live campus event
+                    data through an Express API and renders
+                    it dynamically using JavaScript.
+                </p>
+
+                <div class="hero-meta">
+
+                    <span>
+                        REST API
+                    </span>
+
+                    <span>
+                        JSON
+                    </span>
+
+                    <span>
+                        Fetch API
+                    </span>
+
+                    <span>
+                        Dynamic DOM
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dashboard Preview -->
+
+            <div class="hero-preview">
+
+                <div class="preview-window">
+
+                    <div class="window-bar">
+
+                        <span class="window-dot red"></span>
+                        <span class="window-dot yellow"></span>
+                        <span class="window-dot green"></span>
+
+                    </div>
+
+
+                    <div class="preview-content">
+
+                        <div class="preview-heading">
+
+                            <div>
+
+                                <span>
+                                    CAMPUS ACTIVITY
+                                </span>
+
+                                <strong>
+                                    Upcoming Events
+                                </strong>
+
+                            </div>
+
+                            <span class="preview-count">
+                                LIVE
+                            </span>
+
+                        </div>
+
+
+                        <div class="preview-row">
+
+                            <span class="preview-icon">
+                                01
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Web Development
+                                </strong>
+
+                                <small>
+                                    Innovation Lab
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="preview-row">
+
+                            <span class="preview-icon">
+                                02
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Open Source 101
+                                </strong>
+
+                                <small>
+                                    Seminar Hall
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="preview-row">
+
+                            <span class="preview-icon">
+                                03
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Coding Challenge
+                                </strong>
+
+                                <small>
+                                    Computer Centre
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             Events Section
+             ===================================== -->
+
+        <section class="events-section" id="events">
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        CAMPUS EVENTS
+                    </span>
+
+                    <h2>
+                        What's happening on campus.
+                    </h2>
+
+                    <p>
+                        These events are loaded from the
+                        CampusSphere API rather than being
+                        hard-coded into the page.
+                    </p>
+
+                </div>
+
+
+                <span class="event-count" id="eventCount">
+                    Loading events...
+                </span>
+
+            </div>
+
+
+            <!-- Loading State -->
+
+            <div class="loading-state" id="loadingState">
+
+                <div class="loading-spinner"></div>
+
+                <p>
+                    Fetching campus events...
+                </p>
+
+            </div>
+
+
+            <!-- Error State -->
+
+            <div class="error-state" id="errorState"></div>
+
+
+            <!-- Dynamic Event Grid -->
+
+            <div class="event-grid" id="eventGrid"></div>
+
+        </section>
+
+
+        <!-- =====================================
+             API Integration Section
+             ===================================== -->
+
+        <section class="integration-section" id="integration">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    API INTEGRATION
+                </span>
+
+                <h2>
+                    From endpoint to interface.
+                </h2>
+
+                <p>
+                    The frontend requests JSON data from
+                    Express and transforms the response
+                    into interactive DOM elements.
+                </p>
+
+            </div>
+
+
+            <div class="integration-flow">
+
+
+                <div class="flow-card">
+
+                    <span class="flow-number">
+                        01
+                    </span>
+
+                    <strong>
+                        Express API
+                    </strong>
+
+                    <code>
+                        GET /api/events
+                    </code>
+
+                    <p>
+                        The backend exposes structured
+                        campus event data through a REST
+                        endpoint.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-card">
+
+                    <span class="flow-number">
+                        02
+                    </span>
+
+                    <strong>
+                        Fetch API
+                    </strong>
+
+                    <code>
+                        fetch("/api/events")
+                    </code>
+
+                    <p>
+                        JavaScript requests the endpoint
+                        asynchronously and receives JSON.
+                    </p>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-card">
+
+                    <span class="flow-number">
+                        03
+                    </span>
+
+                    <strong>
+                        Dynamic DOM
+                    </strong>
+
+                    <code>
+                        createElement()
+                    </code>
+
+                    <p>
+                        The response is converted into
+                        event cards and inserted into the UI.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <strong>
+                CampusSphere
+            </strong>
+
+            <p>
+                API-powered campus event dashboard.
+            </p>
+
+        </div>
+
+        <span>
+            Level 3 · Task 5
+        </span>
+
+    </footer>
+
+
+    <script src="/js/api.js"></script>
+
+</body>
+
+</html>

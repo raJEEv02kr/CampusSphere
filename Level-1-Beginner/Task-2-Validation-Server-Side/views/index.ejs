@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSphere | Server-Side Validation</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         Navigation
+         ========================================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+        <div class="task-label">
+            Server-Side Validation
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         Main Content
+         ========================================= -->
+
+    <main class="page-container">
+
+
+        <!-- Page Header -->
+
+        <section class="page-header">
+
+            <div class="eyebrow">
+                LEVEL 1 · TASK 2
+            </div>
+
+            <h1>
+                Create your student profile.
+            </h1>
+
+            <p>
+                Submit your details and let the server
+                validate every field before registration.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             Registration Card
+             ===================================== -->
+
+        <section class="registration-wrapper">
+
+            <div class="registration-card">
+
+
+                <!-- Mac-style Window Bar -->
+
+                <div class="card-windowbar">
+
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+
+                </div>
+
+
+                <!-- Card Header -->
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-kicker">
+                            STUDENT REGISTRATION
+                        </span>
+
+                        <h2>
+                            Enter your details
+                        </h2>
+
+                    </div>
+
+                    <span class="validation-badge">
+                        Server Validated
+                    </span>
+
+                </div>
+
+
+                <!-- =================================
+                     Registration Form
+                     ================================= -->
+
+                <form action="/register" method="POST" class="registration-form">
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                            autocomplete="name">
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit phone number"
+                            autocomplete="tel">
+
+                    </div>
+
+
+                    <!-- Department -->
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <select id="department" name="department">
+
+                            <option value="">
+                                Select department
+                            </option>
+
+                            <option value="Computer Science & Engineering">
+                                Computer Science & Engineering
+                            </option>
+
+                            <option value="Information Technology">
+                                Information Technology
+                            </option>
+
+                            <option value="Electronics & Communication Engineering">
+                                Electronics & Communication Engineering
+                            </option>
+
+                            <option value="Electrical Engineering">
+                                Electrical Engineering
+                            </option>
+
+                            <option value="Mechanical Engineering">
+                                Mechanical Engineering
+                            </option>
+
+                            <option value="Civil Engineering">
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Academic Year -->
+
+                    <div class="form-group full-width">
+
+                        <label for="year">
+                            Academic Year
+                        </label>
+
+                        <select id="year" name="year">
+
+                            <option value="">
+                                Select academic year
+                            </option>
+
+                            <option value="1st Year">
+                                1st Year
+                            </option>
+
+                            <option value="2nd Year">
+                                2nd Year
+                            </option>
+
+                            <option value="3rd Year">
+                                3rd Year
+                            </option>
+
+                            <option value="4th Year">
+                                4th Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Submit -->
+
+                    <button type="submit" class="submit-button">
+
+                        <span>
+                            Validate & Register
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- Validation Note -->
+
+                <div class="validation-note">
+
+                    <span class="note-icon">
+                        ✓
+                    </span>
+
+                    <p>
+                        Your information is validated on the
+                        server before the registration is accepted.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             Validation Information
+             ===================================== -->
+
+        <section class="validation-info">
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Input Validation
+                    </h3>
+
+                    <p>
+                        Checks required fields, email format,
+                        phone number, department and academic year.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Server Processing
+                    </h3>
+
+                    <p>
+                        Form data is received and validated
+                        using the Express backend.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <span class="info-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Safe Submission
+                    </h3>
+
+                    <p>
+                        Invalid submissions are rejected while
+                        valid data proceeds to registration.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
+    <footer class="footer">
+
+        <p>
+            CampusSphere · Level 1 Task 2
+        </p>
+
+        <p>
+            Server-Side Validation
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

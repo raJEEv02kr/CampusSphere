@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSphere | Registration Successful</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         Navigation
+         ========================================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+        <div class="task-label">
+            Server-Side Validation
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         Main Content
+         ========================================= -->
+
+    <main class="success-container">
+
+
+        <!-- Success Header -->
+
+        <section class="success-header">
+
+            <div class="success-icon">
+                ✓
+            </div>
+
+            <div class="eyebrow">
+                REGISTRATION COMPLETE
+            </div>
+
+            <h1>
+                Profile registered successfully.
+            </h1>
+
+            <p>
+                Your information passed server-side validation
+                and has been accepted by CampusSphere.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             Student Details Card
+             ===================================== -->
+
+        <section class="student-card">
+
+
+            <!-- Mac Window Bar -->
+
+            <div class="card-windowbar">
+
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+
+            </div>
+
+
+            <!-- Card Header -->
+
+            <div class="student-card-header">
+
+                <div>
+
+                    <span class="card-kicker">
+                        VERIFIED PROFILE
+                    </span>
+
+                    <h2>
+                        Student Information
+                    </h2>
+
+                </div>
+
+                <span class="status-badge">
+                    Validated
+                </span>
+
+            </div>
+
+
+            <!-- Student Details -->
+
+            <div class="student-details">
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        Full Name
+                    </span>
+
+                    <strong>
+                        <%= student.fullName %>
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        Email Address
+                    </span>
+
+                    <strong>
+                        <%= student.email %>
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        Phone Number
+                    </span>
+
+                    <strong>
+                        <%= student.phone %>
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item">
+
+                    <span class="detail-label">
+                        Department
+                    </span>
+
+                    <strong>
+                        <%= student.department %>
+                    </strong>
+
+                </div>
+
+
+                <div class="detail-item full-width">
+
+                    <span class="detail-label">
+                        Academic Year
+                    </span>
+
+                    <strong>
+                        <%= student.year %>
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Validation Result -->
+
+            <div class="validation-result">
+
+                <div class="result-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Server validation passed
+                    </strong>
+
+                    <p>
+                        All submitted fields satisfied the
+                        validation rules defined by the backend.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             Actions
+             ===================================== -->
+
+        <div class="success-actions">
+
+            <a href="/" class="primary-action">
+                Register Another Student
+            </a>
+
+            <a href="/" class="secondary-action">
+                Back to CampusSphere
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
+    <footer class="footer">
+
+        <p>
+            CampusSphere · Level 1 Task 2
+        </p>
+
+        <p>
+            Server-Side Validation
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

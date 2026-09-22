@@ -1,0 +1,1139 @@
+/* =========================================
+   CampusSphere — Level 1 Task 2
+   Server-Side Validation
+   ========================================= */
+
+
+/* =========================================
+   Global Reset
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "SF Pro Display",
+        "SF Pro Text",
+        "Segoe UI",
+        sans-serif;
+
+    background: var(--bg);
+    color: var(--text);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+
+/* =========================================
+   Theme Variables
+   ========================================= */
+
+:root {
+
+    --bg: #f7f8fa;
+    --surface: #ffffff;
+    --surface-soft: #f1f3f6;
+
+    --text: #17181b;
+    --text-secondary: #626873;
+    --text-muted: #8a9099;
+
+    --border: #e3e6ea;
+    --border-strong: #d4d8de;
+
+    --accent: #111214;
+    --accent-hover: #292b30;
+
+    --success: #16824b;
+    --success-soft: #eaf7f0;
+
+    --danger: #c73535;
+    --danger-soft: #fff0f0;
+
+    --warning: #b47a00;
+    --warning-soft: #fff7df;
+
+    --shadow:
+        0 20px 50px rgba(20, 25, 35, 0.08);
+
+    --radius-lg: 20px;
+    --radius-md: 14px;
+    --radius-sm: 10px;
+}
+
+
+/* =========================================
+   Dark Theme
+   ========================================= */
+
+[data-theme="dark"] {
+
+    --bg: #101114;
+    --surface: #17191d;
+    --surface-soft: #1e2126;
+
+    --text: #f4f5f7;
+    --text-secondary: #a7adb7;
+    --text-muted: #777e89;
+
+    --border: #292d34;
+    --border-strong: #383d46;
+
+    --accent: #f4f5f7;
+    --accent-hover: #ffffff;
+
+    --success: #35b978;
+    --success-soft: rgba(53, 185, 120, 0.12);
+
+    --danger: #ff6969;
+    --danger-soft: rgba(255, 105, 105, 0.10);
+
+    --warning: #e6b84f;
+    --warning-soft: rgba(230, 184, 79, 0.10);
+
+    --shadow:
+        0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================
+   Subtle Grid Background
+   ========================================= */
+
+body {
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(0, 0, 0, 0.025) 1px,
+            transparent 1px);
+
+    background-size: 32px 32px;
+}
+
+[data-theme="dark"] body {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px),
+        linear-gradient(90deg,
+            rgba(255, 255, 255, 0.025) 1px,
+            transparent 1px);
+}
+
+
+/* =========================================
+   Navigation
+   ========================================= */
+
+.navbar {
+    width: 100%;
+    min-height: 72px;
+
+    padding: 0 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-bottom: 1px solid var(--border);
+
+    background: rgba(255, 255, 255, 0.82);
+
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+[data-theme="dark"] .navbar {
+    background: rgba(16, 17, 20, 0.82);
+}
+
+.brand {
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: -0.03em;
+}
+
+.task-label {
+    padding: 7px 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background: var(--surface);
+
+    color: var(--text-secondary);
+
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================
+   Common Typography
+   ========================================= */
+
+.eyebrow {
+    margin-bottom: 14px;
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+}
+
+.card-kicker {
+    display: block;
+    margin-bottom: 7px;
+
+    color: var(--text-muted);
+
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   Main Page
+   ========================================= */
+
+.page-container {
+    width: min(1120px, 90%);
+    margin: 0 auto;
+    padding: 80px 0 100px;
+}
+
+
+/* =========================================
+   Page Header
+   ========================================= */
+
+.page-header {
+    max-width: 720px;
+    margin: 0 auto 54px;
+    text-align: center;
+}
+
+.page-header h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.05;
+
+    letter-spacing: -0.055em;
+
+    margin-bottom: 20px;
+}
+
+.page-header p {
+    max-width: 620px;
+    margin: 0 auto;
+
+    color: var(--text-secondary);
+
+    font-size: 1.02rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   Registration Wrapper
+   ========================================= */
+
+.registration-wrapper {
+    width: min(760px, 100%);
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   Registration Card
+   ========================================= */
+
+.registration-card {
+    overflow: hidden;
+
+    background: var(--surface);
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================
+   Mac-style Window Bar
+   ========================================= */
+
+.card-windowbar {
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 0 17px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--surface-soft);
+}
+
+.window-dot {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+
+    display: inline-block;
+}
+
+.window-dot.red {
+    background: #ff5f57;
+}
+
+.window-dot.yellow {
+    background: #febc2e;
+}
+
+.window-dot.green {
+    background: #28c840;
+}
+
+
+/* =========================================
+   Card Header
+   ========================================= */
+
+.card-header,
+.student-card-header,
+.error-card-header {
+
+    padding: 28px 32px;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    gap: 24px;
+
+    border-bottom: 1px solid var(--border);
+}
+
+.card-header h2,
+.student-card-header h2,
+.error-card-header h2 {
+    font-size: 1.35rem;
+    letter-spacing: -0.025em;
+}
+
+
+/* =========================================
+   Status Badges
+   ========================================= */
+
+.validation-badge,
+.status-badge,
+.error-status-badge {
+
+    flex-shrink: 0;
+
+    padding: 7px 11px;
+
+    border-radius: 999px;
+
+    font-size: 0.72rem;
+    font-weight: 700;
+}
+
+.validation-badge,
+.status-badge {
+    color: var(--success);
+    background: var(--success-soft);
+}
+
+.error-status-badge {
+    color: var(--danger);
+    background: var(--danger-soft);
+}
+
+
+/* =========================================
+   Registration Form
+   ========================================= */
+
+.registration-form {
+
+    padding: 32px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.form-group.full-width {
+    grid-column: 1 / -1;
+}
+
+.form-group label {
+    color: var(--text);
+
+    font-size: 0.82rem;
+    font-weight: 650;
+}
+
+.form-group input,
+.form-group select {
+
+    width: 100%;
+    height: 48px;
+
+    padding: 0 14px;
+
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+
+    outline: none;
+
+    background: var(--surface);
+    color: var(--text);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.form-group input::placeholder {
+    color: var(--text-muted);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+
+    border-color: var(--accent);
+
+    box-shadow:
+        0 0 0 3px color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+
+/* =========================================
+   Submit Button
+   ========================================= */
+
+.submit-button {
+
+    grid-column: 1 / -1;
+
+    width: 100%;
+    min-height: 52px;
+
+    margin-top: 6px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 0;
+    border-radius: var(--radius-sm);
+
+    background: var(--accent);
+    color: var(--bg);
+
+    cursor: pointer;
+
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.submit-button:hover {
+    transform: translateY(-1px);
+    background: var(--accent-hover);
+}
+
+.button-arrow {
+    font-size: 1.2rem;
+}
+
+
+/* =========================================
+   Validation Note
+   ========================================= */
+
+.validation-note {
+
+    margin: 0 32px 32px;
+    padding: 15px 16px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+
+    background: var(--surface-soft);
+}
+
+.note-icon {
+    width: 22px;
+    height: 22px;
+
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: var(--success-soft);
+    color: var(--success);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+}
+
+.validation-note p {
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   Validation Information
+   ========================================= */
+
+.validation-info {
+
+    width: min(1000px, 100%);
+
+    margin: 50px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 16px;
+}
+
+.info-card {
+
+    padding: 24px;
+
+    display: flex;
+    gap: 17px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    background: var(--surface);
+}
+
+.info-number {
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.info-card h3 {
+    margin-bottom: 8px;
+
+    font-size: 0.95rem;
+    letter-spacing: -0.015em;
+}
+
+.info-card p {
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   Success Page
+   ========================================= */
+
+.success-container,
+.error-container {
+
+    width: min(900px, 90%);
+    margin: 0 auto;
+
+    padding: 80px 0 100px;
+}
+
+.success-header,
+.error-header {
+
+    max-width: 700px;
+    margin: 0 auto 48px;
+
+    text-align: center;
+}
+
+.success-icon,
+.error-icon {
+
+    width: 64px;
+    height: 64px;
+
+    margin: 0 auto 24px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+
+.success-icon {
+    color: var(--success);
+    background: var(--success-soft);
+}
+
+.error-icon {
+    color: var(--danger);
+    background: var(--danger-soft);
+}
+
+.success-header h1,
+.error-header h1 {
+
+    margin-bottom: 18px;
+
+    font-size: clamp(2rem, 4vw, 3.2rem);
+
+    line-height: 1.08;
+    letter-spacing: -0.05em;
+}
+
+.success-header p,
+.error-header p {
+
+    color: var(--text-secondary);
+
+    font-size: 0.98rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   Student Card
+   ========================================= */
+
+.student-card,
+.error-card {
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+
+    background: var(--surface);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =========================================
+   Student Details
+   ========================================= */
+
+.student-details {
+
+    padding: 32px;
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: var(--border);
+}
+
+.detail-item {
+
+    min-height: 100px;
+
+    padding: 22px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 8px;
+
+    background: var(--surface);
+}
+
+.detail-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.detail-label,
+.summary-item span {
+
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.detail-item strong {
+
+    color: var(--text);
+
+    font-size: 0.92rem;
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   Validation Result
+   ========================================= */
+
+.validation-result {
+
+    margin: 0 32px 32px;
+    padding: 20px;
+
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+
+    border: 1px solid rgba(22, 130, 75, 0.18);
+    border-radius: var(--radius-md);
+
+    background: var(--success-soft);
+}
+
+.result-icon {
+
+    width: 28px;
+    height: 28px;
+
+    flex-shrink: 0;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background: var(--success);
+    color: white;
+
+    font-size: 0.75rem;
+    font-weight: 800;
+}
+
+.validation-result strong {
+
+    display: block;
+    margin-bottom: 5px;
+
+    color: var(--success);
+
+    font-size: 0.86rem;
+}
+
+.validation-result p {
+
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+    line-height: 1.55;
+}
+
+
+/* =========================================
+   Success / Error Actions
+   ========================================= */
+
+.success-actions,
+.error-actions {
+
+    margin-top: 28px;
+
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.primary-action,
+.secondary-action {
+
+    min-height: 46px;
+
+    padding: 0 18px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--radius-sm);
+
+    font-size: 0.82rem;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        background-color 0.2s ease;
+}
+
+.primary-action {
+
+    background: var(--accent);
+    color: var(--bg);
+}
+
+.primary-action:hover {
+    transform: translateY(-1px);
+}
+
+.secondary-action {
+
+    border: 1px solid var(--border-strong);
+
+    background: var(--surface);
+    color: var(--text);
+}
+
+.secondary-action:hover {
+    background: var(--surface-soft);
+}
+
+
+/* =========================================
+   Error List
+   ========================================= */
+
+.error-list {
+
+    padding: 26px 32px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.error-item {
+
+    padding: 15px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 14px;
+
+    border: 1px solid rgba(199, 53, 53, 0.15);
+    border-radius: var(--radius-sm);
+
+    background: var(--danger-soft);
+}
+
+.error-number {
+
+    color: var(--danger);
+
+    font-size: 0.68rem;
+    font-weight: 800;
+
+    letter-spacing: 0.05em;
+}
+
+.error-message {
+
+    color: var(--text);
+
+    font-size: 0.82rem;
+    line-height: 1.45;
+}
+
+
+/* =========================================
+   Submitted Data Summary
+   ========================================= */
+
+.submitted-summary {
+
+    margin: 0 32px 32px;
+
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+
+    overflow: hidden;
+}
+
+.summary-header {
+
+    padding: 17px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    border-bottom: 1px solid var(--border);
+
+    background: var(--surface-soft);
+}
+
+.summary-header .card-kicker {
+    margin-bottom: 0;
+}
+
+.summary-note {
+
+    color: var(--text-muted);
+
+    font-size: 0.7rem;
+}
+
+.summary-grid {
+
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: var(--border);
+}
+
+.summary-item {
+
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    background: var(--surface);
+}
+
+.summary-item.full-width {
+    grid-column: 1 / -1;
+}
+
+.summary-item strong {
+
+    color: var(--text);
+
+    font-size: 0.82rem;
+    line-height: 1.45;
+
+    word-break: break-word;
+}
+
+
+/* =========================================
+   Footer
+   ========================================= */
+
+.footer {
+
+    width: 100%;
+
+    padding: 25px 6vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--text-muted);
+
+    font-size: 0.72rem;
+}
+
+
+/* =========================================
+   Responsive Design
+   ========================================= */
+
+@media (max-width: 800px) {
+
+    .page-container,
+    .success-container,
+    .error-container {
+        padding-top: 60px;
+    }
+
+    .validation-info {
+        grid-template-columns: 1fr;
+    }
+
+    .registration-form {
+        grid-template-columns: 1fr;
+    }
+
+    .form-group.full-width {
+        grid-column: auto;
+    }
+
+    .student-details {
+        grid-template-columns: 1fr;
+    }
+
+    .detail-item.full-width {
+        grid-column: auto;
+    }
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .summary-item.full-width {
+        grid-column: auto;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        min-height: 64px;
+        padding: 0 5%;
+    }
+
+    .task-label {
+        display: none;
+    }
+
+    .page-container,
+    .success-container,
+    .error-container {
+        width: 92%;
+        padding-top: 48px;
+        padding-bottom: 70px;
+    }
+
+    .page-header {
+        margin-bottom: 38px;
+    }
+
+    .page-header h1 {
+        font-size: 2.25rem;
+    }
+
+    .page-header p {
+        font-size: 0.9rem;
+    }
+
+    .card-header,
+    .student-card-header,
+    .error-card-header {
+        padding: 22px;
+        flex-direction: column;
+    }
+
+    .registration-form {
+        padding: 22px;
+    }
+
+    .validation-note {
+        margin: 0 22px 22px;
+    }
+
+    .student-details {
+        padding: 22px;
+    }
+
+    .validation-result {
+        margin: 0 22px 22px;
+    }
+
+    .error-list {
+        padding: 22px;
+    }
+
+    .submitted-summary {
+        margin: 0 22px 22px;
+    }
+
+    .summary-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .success-header h1,
+    .error-header h1 {
+        font-size: 2.15rem;
+    }
+
+    .success-actions,
+    .error-actions {
+        flex-direction: column;
+    }
+
+    .primary-action,
+    .secondary-action {
+        width: 100%;
+    }
+
+    .footer {
+        padding: 22px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}

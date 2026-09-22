@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="CampusSphere client-side form validation and DOM manipulation">
+
+    <title>CampusSphere | Form Validation</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         Navigation
+         ========================================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+        <span class="task-label">
+            Form Validation & DOM
+        </span>
+
+    </header>
+
+
+    <!-- =========================================
+         Main Content
+         ========================================= -->
+
+    <main class="page-container">
+
+
+        <!-- =====================================
+             Page Header
+             ===================================== -->
+
+        <section class="page-header">
+
+            <span class="eyebrow">
+                LEVEL 2 · TASK 4
+            </span>
+
+            <h1>
+                Validate before you submit.
+            </h1>
+
+            <p>
+                CampusSphere checks your information instantly
+                using JavaScript and DOM manipulation before
+                the form reaches the server.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             Registration Card
+             ===================================== -->
+
+        <section class="registration-wrapper">
+
+            <div class="registration-card">
+
+
+                <!-- Window Bar -->
+
+                <div class="card-windowbar">
+
+                    <span class="window-dot red"></span>
+                    <span class="window-dot yellow"></span>
+                    <span class="window-dot green"></span>
+
+                </div>
+
+
+                <!-- Card Header -->
+
+                <div class="card-header">
+
+                    <div>
+
+                        <span class="card-kicker">
+                            STUDENT PROFILE
+                        </span>
+
+                        <h2>
+                            Registration details
+                        </h2>
+
+                    </div>
+
+                    <span class="form-status" id="formStatus">
+                        Awaiting input
+                    </span>
+
+                </div>
+
+
+                <!-- =================================
+                     Registration Form
+                     ================================= -->
+
+                <form id="registrationForm" action="/register" method="POST" novalidate>
+
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="fullName">
+                            Full Name
+                        </label>
+
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
+                            autocomplete="name">
+
+                        <div class="field-feedback" id="fullNameFeedback" aria-live="polite"></div>
+
+                    </div>
+
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email">
+
+                        <div class="field-feedback" id="emailFeedback" aria-live="polite"></div>
+
+                    </div>
+
+
+                    <!-- Phone -->
+
+                    <div class="form-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit phone number" autocomplete="tel"
+                            maxlength="10">
+
+                        <div class="field-feedback" id="phoneFeedback" aria-live="polite"></div>
+
+                    </div>
+
+
+                    <!-- Department -->
+
+                    <div class="form-group">
+
+                        <label for="department">
+                            Department
+                        </label>
+
+                        <select id="department" name="department">
+
+                            <option value="">
+                                Select department
+                            </option>
+
+                            <option value="Computer Science & Engineering">
+                                Computer Science & Engineering
+                            </option>
+
+                            <option value="Information Technology">
+                                Information Technology
+                            </option>
+
+                            <option value="Electronics & Communication Engineering">
+                                Electronics & Communication Engineering
+                            </option>
+
+                            <option value="Electrical Engineering">
+                                Electrical Engineering
+                            </option>
+
+                            <option value="Mechanical Engineering">
+                                Mechanical Engineering
+                            </option>
+
+                            <option value="Civil Engineering">
+                                Civil Engineering
+                            </option>
+
+                        </select>
+
+                        <div class="field-feedback" id="departmentFeedback" aria-live="polite"></div>
+
+                    </div>
+
+
+                    <!-- Academic Year -->
+
+                    <div class="form-group full-width">
+
+                        <label for="year">
+                            Academic Year
+                        </label>
+
+                        <select id="year" name="year">
+
+                            <option value="">
+                                Select academic year
+                            </option>
+
+                            <option value="1st Year">
+                                1st Year
+                            </option>
+
+                            <option value="2nd Year">
+                                2nd Year
+                            </option>
+
+                            <option value="3rd Year">
+                                3rd Year
+                            </option>
+
+                            <option value="4th Year">
+                                4th Year
+                            </option>
+
+                        </select>
+
+                        <div class="field-feedback" id="yearFeedback" aria-live="polite"></div>
+
+                    </div>
+
+
+                    <!-- Form-level message -->
+
+                    <div class="form-message" id="formMessage" role="status" aria-live="polite"></div>
+
+
+                    <!-- Submit -->
+
+                    <button type="submit" class="submit-button" id="submitButton">
+
+                        <span>
+                            Validate & Continue
+                        </span>
+
+                        <span class="button-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- =================================
+                     Validation Summary
+                     ================================= -->
+
+                <div class="validation-summary">
+
+                    <div class="summary-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Client-side validation enabled
+                        </strong>
+
+                        <p>
+                            Fields are checked instantly using
+                            JavaScript before submission.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DOM Demonstration
+             ===================================== -->
+
+        <section class="dom-section">
+
+            <div class="section-heading">
+
+                <span class="eyebrow">
+                    DOM INTERACTION
+                </span>
+
+                <h2>
+                    Feedback changes as you type.
+                </h2>
+
+                <p>
+                    The interface dynamically updates field
+                    states, validation messages and the
+                    overall form status through the DOM.
+                </p>
+
+            </div>
+
+
+            <div class="validation-flow">
+
+
+                <div class="flow-item">
+
+                    <span class="flow-number">
+                        01
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            User Input
+                        </h3>
+
+                        <p>
+                            The user enters or selects
+                            information in the form.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-item">
+
+                    <span class="flow-number">
+                        02
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            DOM Validation
+                        </h3>
+
+                        <p>
+                            JavaScript evaluates the current
+                            field and updates its feedback.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="flow-arrow">
+                    →
+                </div>
+
+
+                <div class="flow-item">
+
+                    <span class="flow-number">
+                        03
+                    </span>
+
+                    <div>
+
+                        <h3>
+                            Submission
+                        </h3>
+
+                        <p>
+                            Only a valid form is allowed
+                            to continue to the server.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
+    <footer class="footer">
+
+        <div>
+
+            <strong>
+                CampusSphere
+            </strong>
+
+            <p>
+                Client-side validation with JavaScript DOM.
+            </p>
+
+        </div>
+
+        <span>
+            Level 2 · Task 4
+        </span>
+
+    </footer>
+
+
+    <script src="/js/validation.js"></script>
+
+</body>
+
+</html>

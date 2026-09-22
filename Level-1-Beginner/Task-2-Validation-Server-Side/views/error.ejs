@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSphere | Validation Error</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         Navigation
+         ========================================= -->
+
+    <header class="navbar">
+
+        <a href="/" class="brand">
+            CampusSphere
+        </a>
+
+        <div class="task-label">
+            Server-Side Validation
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         Main Content
+         ========================================= -->
+
+    <main class="error-container">
+
+
+        <!-- Error Header -->
+
+        <section class="error-header">
+
+            <div class="error-icon">
+                !
+            </div>
+
+            <div class="eyebrow">
+                VALIDATION FAILED
+            </div>
+
+            <h1>
+                Please check your details.
+            </h1>
+
+            <p>
+                The server could not validate your submission.
+                Correct the highlighted issues and try again.
+            </p>
+
+        </section>
+
+
+        <!-- =====================================
+             Validation Error Card
+             ===================================== -->
+
+        <section class="error-card">
+
+
+            <!-- Mac Window Bar -->
+
+            <div class="card-windowbar">
+
+                <span class="window-dot red"></span>
+                <span class="window-dot yellow"></span>
+                <span class="window-dot green"></span>
+
+            </div>
+
+
+            <!-- Card Header -->
+
+            <div class="error-card-header">
+
+                <div>
+
+                    <span class="card-kicker">
+                        SERVER RESPONSE
+                    </span>
+
+                    <h2>
+                        Validation issues
+                    </h2>
+
+                </div>
+
+                <span class="error-status-badge">
+                    <%= errors.length %>
+                        <%= errors.length===1 ? "Issue" : "Issues" %>
+                </span>
+
+            </div>
+
+
+            <!-- =================================
+                 Error List
+                 ================================= -->
+
+            <div class="error-list">
+
+                <% errors.forEach((error, index)=> { %>
+
+                    <div class="error-item">
+
+                        <span class="error-number">
+                            <%= String(index + 1).padStart(2, "0" ) %>
+                        </span>
+
+                        <span class="error-message">
+                            <%= error %>
+                        </span>
+
+                    </div>
+
+                    <% }); %>
+
+            </div>
+
+
+            <!-- =================================
+                 Submitted Data Summary
+                 ================================= -->
+
+            <div class="submitted-summary">
+
+                <div class="summary-header">
+
+                    <span class="card-kicker">
+                        SUBMITTED DATA
+                    </span>
+
+                    <span class="summary-note">
+                        Review before resubmitting
+                    </span>
+
+                </div>
+
+
+                <div class="summary-grid">
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Full Name
+                        </span>
+
+                        <strong>
+                            <%= formData.fullName || "Not provided" %>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Email
+                        </span>
+
+                        <strong>
+                            <%= formData.email || "Not provided" %>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Phone
+                        </span>
+
+                        <strong>
+                            <%= formData.phone || "Not provided" %>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item">
+
+                        <span>
+                            Department
+                        </span>
+
+                        <strong>
+                            <%= formData.department || "Not provided" %>
+                        </strong>
+
+                    </div>
+
+
+                    <div class="summary-item full-width">
+
+                        <span>
+                            Academic Year
+                        </span>
+
+                        <strong>
+                            <%= formData.year || "Not provided" %>
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =====================================
+             Actions
+             ===================================== -->
+
+        <div class="error-actions">
+
+            <a href="/" class="primary-action">
+                Correct Details
+            </a>
+
+            <a href="/" class="secondary-action">
+                Back to CampusSphere
+            </a>
+
+        </div>
+
+
+    </main>
+
+
+    <!-- =========================================
+         Footer
+         ========================================= -->
+
+    <footer class="footer">
+
+        <p>
+            CampusSphere · Level 1 Task 2
+        </p>
+
+        <p>
+            Server-Side Validation
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

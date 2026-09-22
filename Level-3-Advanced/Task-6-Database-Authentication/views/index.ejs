@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusSphere | Authentication</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="/" class="brand">
+            <span class="brand-mark">C</span>
+            <span>CampusSphere</span>
+        </a>
+
+        <span class="status-badge">
+            <span class="status-dot"></span>
+            Secure Access
+        </span>
+    </header>
+
+    <main class="auth-page">
+
+        <section class="auth-intro">
+            <span class="eyebrow">CAMPUS MANAGEMENT PLATFORM</span>
+
+            <h1>
+                Your campus.
+                <br>
+                <span>One connected space.</span>
+            </h1>
+
+            <p>
+                Access your CampusSphere account to manage your
+                student profile, discover campus activities and
+                stay connected with your academic community.
+            </p>
+
+            <div class="intro-points">
+                <div class="intro-point">
+                    <span class="point-icon">✓</span>
+                    <span>Secure student authentication</span>
+                </div>
+
+                <div class="intro-point">
+                    <span class="point-icon">✓</span>
+                    <span>Centralized campus experience</span>
+                </div>
+
+                <div class="intro-point">
+                    <span class="point-icon">✓</span>
+                    <span>Protected user information</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="auth-card">
+
+            <div class="auth-card-header">
+                <span class="card-label">WELCOME TO CAMPUSSPHERE</span>
+
+                <h2 id="formTitle">Create your account</h2>
+
+                <p id="formDescription">
+                    Register to get started with your campus account.
+                </p>
+            </div>
+
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab active" id="registerTab">
+                    Register
+                </button>
+
+                <button type="button" class="auth-tab" id="loginTab">
+                    Login
+                </button>
+            </div>
+
+            <form id="registerForm" action="/register" method="POST">
+
+                <div class="form-field">
+                    <label for="fullName">Full Name</label>
+
+                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="email">Email Address</label>
+
+                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-field">
+                        <label for="phone">Phone Number</label>
+
+                        <input type="tel" id="phone" name="phone" placeholder="10-digit number" pattern="[0-9]{10}"
+                            required>
+                    </div>
+
+                    <div class="form-field">
+                        <label for="academicYear">Academic Year</label>
+
+                        <select id="academicYear" name="academicYear" required>
+                            <option value="">Select year</option>
+                            <option value="1st Year">1st Year</option>
+                            <option value="2nd Year">2nd Year</option>
+                            <option value="3rd Year">3rd Year</option>
+                            <option value="4th Year">4th Year</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-field">
+                    <label for="department">Department</label>
+
+                    <select id="department" name="department" required>
+                        <option value="">Select department</option>
+                        <option value="Computer Science and Engineering">
+                            Computer Science and Engineering
+                        </option>
+                        <option value="Information Technology">
+                            Information Technology
+                        </option>
+                        <option value="Electronics and Communication Engineering">
+                            Electronics and Communication Engineering
+                        </option>
+                        <option value="Electrical Engineering">
+                            Electrical Engineering
+                        </option>
+                        <option value="Mechanical Engineering">
+                            Mechanical Engineering
+                        </option>
+                        <option value="Civil Engineering">
+                            Civil Engineering
+                        </option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="password">Password</label>
+
+                    <input type="password" id="password" name="password" placeholder="Create a password" minlength="6"
+                        required>
+                </div>
+
+                <div class="form-field">
+                    <label for="confirmPassword">
+                        Confirm Password
+                    </label>
+
+                    <input type="password" id="confirmPassword" name="confirmPassword"
+                        placeholder="Re-enter your password" minlength="6" required>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Create Account
+                    <span>→</span>
+                </button>
+
+            </form>
+
+            <form id="loginForm" action="/login" method="POST" hidden>
+
+                <div class="form-field">
+                    <label for="loginEmail">Email Address</label>
+
+                    <input type="email" id="loginEmail" name="email" placeholder="you@example.com" required>
+                </div>
+
+                <div class="form-field">
+                    <label for="loginPassword">Password</label>
+
+                    <input type="password" id="loginPassword" name="password" placeholder="Enter your password"
+                        required>
+                </div>
+
+                <button type="submit" class="submit-button">
+                    Login to Account
+                    <span>→</span>
+                </button>
+
+            </form>
+
+            <p class="form-footer" id="formFooter">
+                Already have an account?
+                <button type="button" id="switchToLogin">
+                    Login here
+                </button>
+            </p>
+
+            <p class="security-note">
+                Your credentials will be securely processed.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <span>© 2026 CampusSphere</span>
+        <span>Built for connected campus experiences.</span>
+    </footer>
+
+    <script src="/js/auth.js?v=3"></script>
+
+</body>
+
+</html>
