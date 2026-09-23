@@ -73,6 +73,8 @@ The final advanced task introduces:
 
 The project is structured to support learning, experimentation, documentation, and progressive development of full-stack web application concepts.
 
+> **Project Demonstration:** [Watch on LinkedIn](https://www.linkedin.com/posts/rajeev-kumar-9a0112326_cognifyz-cognifyztechnologies-cognifyzinternship-activity-7508279287620272128-KNoV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFI-EAgBIMETKYWvGDlfgnO5af8Eo3MTK50)
+
 ---
 
 ## Internship Context
@@ -1202,22 +1204,14 @@ Add screenshots of the completed tasks and application interfaces to this sectio
 [Add Task 6 Registration/Login Screenshot Here]
 
 
-# Video Demonstrations
 
-The following section can be updated with individual video links for each internship task.
+## Video Demonstration
 
-| Task | Demonstration Video |
-|---|---|
-| Task 1 | `[Add Task 1 Video URL]` |
-| Task 2 | `[Add Task 2 Video URL]` |
-| Task 3 | `[Add Task 3 Video URL]` |
-| Task 4 | `[Add Task 4 Video URL]` |
-| Task 5 | `[Add Task 5 Video URL]` |
-| Task 6 | `[Add Task 6 Video URL]` |
+A complete demonstration of all six tasks, including frontend functionality, server interaction, validation, API integration, database connectivity, and authentication, is available in the LinkedIn post below.
 
-### Video Demonstration Guidelines
+[Watch the Complete Project Demonstration on LinkedIn](https://www.linkedin.com/posts/rajeev-kumar-9a0112326_cognifyz-cognifyztechnologies-cognifyzinternship-activity-7508279287620272128-KNoV?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFI-EAgBIMETKYWvGDlfgnO5af8Eo3MTK50)
 
-Each video can demonstrate:
+The video demonstrates:
 
 - Application startup
 - Main interface
